@@ -39,29 +39,34 @@ document.querySelectorAll('details.faq__item').forEach(item => {
   });
 });
 
-// Contact form — no backend yet: opens the visitor's email client
-// pre-filled to info@demandry.media. Swap for a real form endpoint
-// (Formspree/Netlify) before launch; mailto is the fallback path.
+// Contact form — submits to Formspree without leaving the page.
+// If JS is off, the form's action posts to Formspree directly
+// (visitor lands on Formspree's thank-you page instead).
 const form = document.getElementById('audit-form');
 const status = form.querySelector('.form__status');
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
-  const val = id => (document.getElementById(id)?.value || '').trim();
-  const name = val('f-name');
-  const email = val('f-email');
-  const company = val('f-company');
-  const phone = val('f-phone');
-  const message = val('f-message');
-
-  const subject = encodeURIComponent(`Free Demand Audit request — ${company || name}`);
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\nBusiness: ${company}\nPhone: ${phone || '—'}\n\n${message}`
-  );
-  window.location.href = `mailto:info@demandry.media?subject=${subject}&body=${body}`;
+  const button = form.querySelector('button[type="submit"]');
+  button.disabled = true;
 
   // Clear then set after a beat so screen readers announce every submit.
   status.textContent = '';
   setTimeout(() => {
-    status.textContent = 'Your email app should open now — just hit send. Or write us directly: info@demandry.media';
+    status.textContent = 'Sending…';
   }, 100);
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+    if (!res.ok) throw new Error(`Formspree responded ${res.status}`);
+    form.reset();
+    status.textContent = "Your request is in. A founder replies — usually same day.";
+  } catch (err) {
+    status.textContent = 'Something went wrong sending your request — please email us directly: info@demandry.media';
+  } finally {
+    button.disabled = false;
+  }
 });
