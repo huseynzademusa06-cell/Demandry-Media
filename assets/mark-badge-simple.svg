@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<!-- Demandry Media mark - generated 2026-07-05 - geometric master, do not hand-edit; edit SPEC in generate-masters.mjs -->
+<circle cx="500" cy="500" r="488" fill="#0D0F0D"/>
+<circle cx="500" cy="500" r="473" fill="none" stroke="#2D4A34" stroke-width="30"/>
+<circle cx="500" cy="500" r="433" fill="none" stroke="#1A1D1B" stroke-width="46"/>
+<circle cx="500" cy="500" r="456" fill="none" stroke="#2D4A34" stroke-width="5"/>
+<circle cx="500" cy="500" r="410" fill="none" stroke="#2D4A34" stroke-width="5"/>
+<circle cx="500" cy="500" r="400" fill="#2D4A34"/>
+<line x1="402" y1="296" x2="844.07" y2="296" stroke="#0D0F0D" stroke-width="27"/>
+<line x1="598" y1="296" x2="890.16" y2="588.16" stroke="#0D0F0D" stroke-width="27"/>
+<line x1="668" y1="366" x2="668" y2="863.01" stroke="#0D0F0D" stroke-width="27"/>
+<line x1="668" y1="566" x2="564.57" y2="894.75" stroke="#0D0F0D" stroke-width="27"/>
+<line x1="424" y1="878" x2="424" y2="107.29" stroke="#0D0F0D" stroke-width="27"/>
+<line x1="424" y1="655" x2="123.66" y2="364.46" stroke="#0D0F0D" stroke-width="27"/>
+<line x1="332" y1="366" x2="588.16" y2="109.84" stroke="#0D0F0D" stroke-width="27"/>
+<line x1="332" y1="566" x2="435.43" y2="894.75" stroke="#0D0F0D" stroke-width="17"/>
+<line x1="430" y1="892" x2="272.49" y2="828.99" stroke="#0D0F0D" stroke-width="17"/>
+<line x1="570" y1="892" x2="727.51" y2="828.99" stroke="#0D0F0D" stroke-width="17"/>
+<line x1="424" y1="878" x2="369.17" y2="878" stroke="#0D0F0D" stroke-width="17"/>
+<line x1="640" y1="878" x2="630.83" y2="878" stroke="#0D0F0D" stroke-width="17"/>
+<path d="M 402 296 L 598 296 L 668 366 L 668 566 L 640 655 L 640 878 L 424 878 L 424 655 L 332 566 L 332 366 Z" fill="#0D0F0D"/>
+<path fill-rule="nonzero" d="M 382 460 A 118 118 0 1 1 618 460 A 118 118 0 1 1 382 460 Z M 452 430 A 48 48 0 1 0 548 430 A 48 48 0 1 0 452 430 Z M 464 540 h 72 v 50 h -72 Z M 464 585 h 15.5 v 117 h -15.5 Z M 495.25 585 h 15.5 v 117 h -15.5 Z M 526.5 585 h 15.5 v 117 h -15.5 Z M 464 696 h 72 v 194 h -72 Z M 536 702 h 64 v 64 h -64 Z M 569 766 L 620 856 L 518 856 Z" fill="#E8342E"/>
+</svg>
