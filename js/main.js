@@ -1,4 +1,4 @@
-// DemandRY Media — interactions
+// Demandry Media — interactions
 
 // Signal JS availability: CSS only hides .reveal elements under .js,
 // so the page stays fully visible if this file never runs.

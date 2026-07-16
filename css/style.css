@@ -1,5 +1,5 @@
 /* =====================================================
-   DemandRY Media — design system
+   Demandry Media — design system
    Palette from live brand (custom.css root vars):
    dark #0d0f0d · surface #1a1d1b · cream #f3f0e8
    red #e8342e (CTAs only) · red-glow #ff5a4e
@@ -276,13 +276,49 @@ button:focus-visible {
 }
 
 /* hero badge crest — hero raster render from the Brand kit (glow baked into the PNG) */
-.hero__badge {
+.hero__badge-wrap {
+  position: relative;
   width: 240px;
-  height: auto;
   margin-bottom: -6px;
 }
 
-@media (max-width: 480px) { .hero__badge { width: 180px; } }
+.hero__badge, .hero__key-glow {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Inlined key overlay (see index.html): the whole key silhouette (same 1180 canvas as
+   hero-badge.png, so it aligns pixel-for-pixel) plus the "RY" text, laid on top, cycling
+   from no glow (key looks normal) up to full blazing glow and back — a heartbeat, not a
+   constant breathe. One hole is punched in the bow over the "RY" roundel baked into
+   hero-badge.png, patched with flat onyx and redrawn in Key Red, so it glows in sync too. */
+.hero__key-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: key-glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes key-glow-pulse {
+  0%, 100% {
+    opacity: 0;
+    filter: drop-shadow(0 0 0 rgba(232, 52, 46, 0)) drop-shadow(0 0 0 rgba(255, 90, 78, 0));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(232, 52, 46, 0.85)) drop-shadow(0 0 42px rgba(255, 90, 78, 0.55));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__key-glow {
+    animation: none;
+    filter: drop-shadow(0 0 14px rgba(232, 52, 46, 0.7));
+  }
+}
+
+@media (max-width: 480px) { .hero__badge-wrap { width: 180px; } }
 
 .badge {
   display: inline-block;
