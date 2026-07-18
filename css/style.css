@@ -275,10 +275,11 @@ button:focus-visible {
   gap: 24px;
 }
 
-/* hero badge crest — hero raster render from the Brand kit (glow baked into the PNG) */
+/* hero badge crest — designer-final render (2026-07-18); disc fills the frame,
+   so 200px here ≈ the old 240px canvas with margins */
 .hero__badge-wrap {
   position: relative;
-  width: 240px;
+  width: 200px;
   margin-bottom: -6px;
 }
 
@@ -288,11 +289,11 @@ button:focus-visible {
   height: auto;
 }
 
-/* Inlined key overlay (see index.html): the whole key silhouette (same 1180 canvas as
-   hero-badge.png, so it aligns pixel-for-pixel) plus the "RY" text, laid on top, cycling
-   from no glow (key looks normal) up to full blazing glow and back — a heartbeat, not a
-   constant breathe. One hole is punched in the bow over the "RY" roundel baked into
-   hero-badge.png, patched with flat onyx and redrawn in Key Red, so it glows in sync too. */
+/* Inlined key overlay (see index.html): the key + RY roundel paths extracted from the
+   designer's final vector (same page frame as hero-badge.png — pixel-aligned by
+   construction), cycling from no glow up to full blazing glow and back — a heartbeat,
+   not a constant breathe. Roundel text/center ride along in original paint order, so
+   black stays black and only the red silhouette blazes. */
 .hero__key-glow {
   position: absolute;
   inset: 0;
@@ -318,7 +319,7 @@ button:focus-visible {
   }
 }
 
-@media (max-width: 480px) { .hero__badge-wrap { width: 180px; } }
+@media (max-width: 480px) { .hero__badge-wrap { width: 150px; } }
 
 .badge {
   display: inline-block;
